@@ -52,6 +52,9 @@ Mkfile.old
 dkms.conf
 
 
+.ccls-cache/*
+*.ccls-cache/
+*/.ccls-cache
 build
 build/
 build/*
