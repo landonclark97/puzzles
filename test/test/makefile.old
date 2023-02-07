@@ -1,0 +1,21 @@
+CFLAGS = -O3
+LIBS =-lSDL2 -lSDL2_image -lSDL2_mixer -lchipmunk -lflecs -ludev -lm
+
+INCLUDE = ../../src/*/*.h ../game/*.h ../../include/puzzles.h
+C = ../../src/*/*.c ../game/*.c
+
+DEBUG =-g
+
+CC =gcc
+
+test: test.c
+	$(CC) $(CFLAGS) $(INCLUDE) $(C) $? -o $@ $(LIBS)
+	./test
+	rm ./test
+
+debug: test.c
+	$(CC) $(DEBUG) $(CFLAGS) $(INCLUDE) $(C) $? -o $@ $(LIBS)
+
+clean:
+	rm ./test
+	rm ./debug
